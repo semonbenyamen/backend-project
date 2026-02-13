@@ -10,7 +10,7 @@ const ContactSchema = new mongoose.Schema(
 
     phones: {
       type: [String],
-      set: (values) => [...new Set(values)], // 🔥 real SET behavior
+      set: (values) => [...new Set(values)],
     },
 
     socialMedia: {
@@ -31,7 +31,7 @@ const ContactSchema = new mongoose.Schema(
       set: (values) =>
         Array.from(
           new Map(values.map((v) => [v.platform, v])).values()
-        ), // 🔥 one per platform (SET)
+        ),
     },
   },
   { timestamps: true }
